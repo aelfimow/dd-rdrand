@@ -29,7 +29,7 @@ try
     }
 
     size_t const rand_word_size = sizeof(uint64_t);
-    bool const bs_is_aligned = (0 == (bs % rand_word_size);
+    bool const bs_is_aligned = (0 == (bs % rand_word_size));
     size_t const rand_buffer_size = bs_is_aligned ? (bs / rand_word_size) : ((bs / rand_word_size) + rand_word_size);
 
     // Allocate buffers
