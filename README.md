@@ -1,5 +1,5 @@
 # dd-rdrand
-dd using RDRAND instruction
+`dd` using `RDRAND` instruction of x86 CPUs.
 
 ## Usage
 ```
