@@ -20,7 +20,14 @@ try
 {
     argv_parser ap { argc, argv };
 
-    auto of_name = ap.of_name().value_or("No output file name");
+    std::string const missing_file_name { "No output file name" };
+
+    auto of_name = ap.of_name().value_or(missing_file_name);
+    if (of_name == missing_file_name)
+    {
+        throw std::runtime_error("Output file name not specified");
+    }
+
     auto bs = ap.bs().value_or(default_block_size);
     auto count = ap.count().value_or(default_block_count);
 
